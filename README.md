@@ -23,6 +23,8 @@
 ---
 
 ## MER — Benchmarks (conceitual)
+
+```mermaid
 erDiagram
   BENCHMARK ||--o{ CONTROL : has
   CONTROL   ||--o{ STATE_CHANGE : records
@@ -49,8 +51,7 @@ erDiagram
 
   %% Observação:
   %% STATE_CHANGE.state aceita apenas: ok | alarm
-
-
+```
 ## Regras
 
 - O **estado atual** de um controle é o último registro em `STATE_CHANGE` (maior `changed_at`).
