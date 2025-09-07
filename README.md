@@ -23,33 +23,33 @@
 ---
 
 ## MER — Benchmarks (conceitual)
-
 erDiagram
-BENCHMARK ||--o{ CONTROL : has
-CONTROL ||--o{ STATE_CHANGE : records
+  BENCHMARK ||--o{ CONTROL : has
+  CONTROL   ||--o{ STATE_CHANGE : records
 
-BENCHMARK {
-string id PK
-string name
-}
+  BENCHMARK {
+    string id PK
+    string name
+  }
 
-CONTROL {
-string id PK
-string benchmark_id FK
-string name
-string description
-}
+  CONTROL {
+    string id PK
+    string benchmark_id FK
+    string name
+    string description
+  }
 
-STATE_CHANGE {
-string id PK
-string control_id FK
-datetime changed_at
-string state
-string note
-}
+  STATE_CHANGE {
+    string id PK
+    string control_id FK
+    datetime changed_at
+    string state
+    string note
+  }
 
-%% Observação:
-%% STATE_CHANGE.state aceita apenas: ok | alarm
+  %% Observação:
+  %% STATE_CHANGE.state aceita apenas: ok | alarm
+
 
 ## Regras
 
