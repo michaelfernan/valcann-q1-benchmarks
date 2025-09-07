@@ -97,10 +97,10 @@ LEFT JOIN LATERAL (
   LIMIT 1
 ) sc ON TRUE
 WHERE b.id = :benchmark_id;
-
+````
 
 ### (Q2) Benchmark + Controles + mudanças de estado em um intervalo
-```sql
+````sql
 SELECT b.id, b.name,
        c.id AS control_id, c.name AS control_name,
        sc.state, sc.changed_at
@@ -111,10 +111,10 @@ WHERE b.id = :benchmark_id
   AND sc.changed_at >= :from_ts
   AND sc.changed_at <  :to_ts
 ORDER BY c.id, sc.changed_at;
-
+````
 
 ### (Q3) Benchmark + Controles + estado em uma data/hora X
-```sql
+````sql
 SELECT b.id, b.name,
        c.id AS control_id, c.name AS control_name, c.description,
        scx.state, scx.changed_at
